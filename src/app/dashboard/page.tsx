@@ -1,4 +1,4 @@
-import Contact from "@/components/common/contacts";
+// import Contact from "@/components/common/contacts";
 import Header from "@/components/common/header";
 import Landing from "@/components/v2/landing";
 import About from '@/components/v2/about';
