@@ -9,7 +9,7 @@ const Switch = () => {
   return (
     <Button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 transition text-black dark:text-white"
+      className="p-2 rounded-lg bg-white dark:bg-black dark:hover:bg-white transition text-black dark:text-white"
     >
       {theme === 'dark' ? '☀️' : '🌙'}
     </Button>

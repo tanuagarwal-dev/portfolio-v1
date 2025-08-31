@@ -13,8 +13,6 @@ export default function AboutMe() {
                         bg-gradient-to-r from-emerald-400/20 to-teal-500/20 
                         blur-3xl"
       />
-
-      {/* "absolute inset-0 w-[60%] h-[80%] rounded-full bg-green-400 blur-3xl opacity-20 -rotate-25 z-0" */}
       <p>
         Born in Lucknow, I&apos;m a third-year Computer Science undergraduate at
         JSS Academy of Technical Education, Noida, deeply passionate about
@@ -42,7 +40,7 @@ Currently, I&apos;m focused on learning more about authentication patterns (OAut
 </p> */}
 
       <p>
-        Currently, I'm exploring authentication patterns (OAuth, JWT), automated
+        Currently, I&apos;m exploring authentication patterns (OAuth, JWT), automated
         testing with Playwright, and performance optimization. Outside of tech,
         I love discovering new music, exploring creative ideas, and finding
         inspiration in the little things.

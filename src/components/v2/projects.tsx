@@ -1,19 +1,15 @@
-'use client';
-import { Button } from '@/components/ui/button';
+'use client';;
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Separator } from '../ui/separator';
 import Image from 'next/image';
 import { Github, Link as Link1 } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
 import { projects, noteworthyProjects } from '@/lib/data';
 
@@ -116,15 +112,13 @@ export default function Projects() {
             <div className="absolute -top-3 left-4 projects-clip w-24 h-6 dark:bg-zinc-700 bg-emerald-500 z-0"></div>
             <CardBody className="dark:bg-zinc-900 bg-emerald-700 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] rounded-xl p-6 border z-10 lg:h-88 md:h-100 h-120 flex flex-col gap-2">
               <CardItem
-                as="h3"
-                translateZ="50"
+                translateZ={50}
                 className="text-sm text-gray-300 dark:text-gray-400"
               >
                 Ongoing project
               </CardItem>
               <CardItem
-                as="h1"
-                translateZ="60"
+                translateZ={60}
                 className="text-white mt-2 text-2xl font-semibold flex gap-2 items-center"
               >
                 {project.name}
@@ -137,8 +131,7 @@ export default function Projects() {
               </CardItem>
 
               <CardItem
-                translateZ="50"
-                as="p"
+                translateZ={50}
                 className="dark:text-gray-300 text-slate-300 mt-4"
               >
                 {project.description}
@@ -147,8 +140,7 @@ export default function Projects() {
                 {project.techStack.map((tech, index) => (
                   <CardItem
                     key={index}
-                    as="span"
-                    translateZ="50"
+                    translateZ={50}
                     className="dark:hover:text-green-900"
                   >
                     #{tech}

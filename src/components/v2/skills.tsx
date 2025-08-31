@@ -1,7 +1,6 @@
 'use client';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Card from '../uiverse/CardV2';
-import Pattern from '../uiverse/Pattern';
 import { card } from '@/lib/data';
 
 export default function Skills() {

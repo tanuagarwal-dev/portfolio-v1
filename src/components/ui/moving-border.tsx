@@ -10,34 +10,35 @@ import {
 import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-export function Button({
+type ButtonProps<T extends React.ElementType> = {
+  borderRadius?: string;
+  children: React.ReactNode;
+  as?: T;
+  containerClassName?: string;
+  borderClassName?: string;
+  duration?: number;
+  className?: string;
+} & React.ComponentPropsWithoutRef<T>;
+
+export function Button<T extends React.ElementType = 'button'>({
   borderRadius = '1.75rem',
   children,
-  as: Component = 'button',
+  as,
   containerClassName,
   borderClassName,
   duration,
   className,
   ...otherProps
-}: {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-  [key: string]: any;
-}) {
+}: ButtonProps<T>) {
+  const Component = as || 'button';
+
   return (
     <Component
       className={cn(
         'relative h-16 w-40 overflow-hidden bg-transparent p-[1px] text-xl',
         containerClassName
       )}
-      style={{
-        borderRadius: borderRadius,
-      }}
+      style={{ borderRadius }}
       {...otherProps}
     >
       <div
@@ -47,7 +48,7 @@ export function Button({
         <MovingBorder duration={duration} rx="60%" ry="90%">
           <div
             className={cn(
-              'h-4 w-20 bg-amber-300  dark:bg-[radial-gradient(#0ea5e9_40%,transparent_60%)] dark:opacity-[0.8] opacity-100',
+              'h-4 w-20 bg-amber-300 dark:bg-[radial-gradient(#0ea5e9_40%,transparent_60%)] dark:opacity-[0.8] opacity-100',
               borderClassName
             )}
           />
@@ -69,20 +70,18 @@ export function Button({
   );
 }
 
+
 export const MovingBorder = ({
   children,
   duration = 3000,
-  rx,
-  ry,
   ...otherProps
 }: {
   children: React.ReactNode;
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
-}) => {
-  const pathRef = useRef<any>();
+} & React.SVGProps<SVGSVGElement>) => {
+  const pathRef = useRef<SVGPathElement | null>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
@@ -110,16 +109,11 @@ export const MovingBorder = ({
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
         className="absolute h-full w-full"
-        width="100%"
-        height="100%"
         {...otherProps}
       >
-        <rect
+        <path
           fill="none"
-          width="100%"
-          height="100%"
-          rx={rx}
-          ry={ry}
+          d={`M0,0 H100 V100 H0 Z`} // rectangle path
           ref={pathRef}
         />
       </svg>
@@ -137,3 +131,4 @@ export const MovingBorder = ({
     </>
   );
 };
+

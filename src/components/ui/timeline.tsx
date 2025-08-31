@@ -1,6 +1,5 @@
 'use client';
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -8,9 +7,6 @@ import {
 import React, { useEffect, useRef, useState } from 'react';
 import {
   CalendarClock,
-  Captions,
-  GraduationCap,
-  Locate,
   MapPin,
 } from 'lucide-react';
 

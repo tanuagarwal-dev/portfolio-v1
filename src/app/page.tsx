@@ -7,7 +7,6 @@ import Projects from '@/components/v2/projects';
 import Touch from '@/components/v2/touch';
 import Education from '@/components/v2/education';
 import Skills from '@/components/v2/skills';
-import TerminalComponent from '@/components/common/TerminalComponent';
 
 export default function Home() {
   return (

@@ -6,7 +6,6 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -73,9 +72,6 @@ export const MenuBar = () => {
                 Cancel
               </Button>
             </DrawerClose>
-            {/* <DrawerFooter>
-            
-          </DrawerFooter> */}
           </div>
         </DrawerContent>
       </Drawer>
