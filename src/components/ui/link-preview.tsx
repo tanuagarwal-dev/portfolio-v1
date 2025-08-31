@@ -1,16 +1,16 @@
-"use client";
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+'use client';
+import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
 
-import { encode } from "qss";
-import React from "react";
+import { encode } from 'qss';
+import React from 'react';
 import {
   AnimatePresence,
   motion,
   useMotionValue,
   useSpring,
-} from "motion/react";
+} from 'motion/react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 type LinkPreviewProps = {
   children: React.ReactNode;
@@ -32,9 +32,9 @@ export const LinkPreview = ({
   width = 200,
   height = 125,
   quality = 50,
-  layout = "fixed",
+  layout = 'fixed',
   isStatic = false,
-  imageSrc = "",
+  imageSrc = '',
 }: LinkPreviewProps) => {
   let src;
   if (!isStatic) {
@@ -42,12 +42,12 @@ export const LinkPreview = ({
       url,
       screenshot: true,
       meta: false,
-      embed: "screenshot.url",
-      colorScheme: "dark",
-      "viewport.isMobile": true,
-      "viewport.deviceScaleFactor": 1,
-      "viewport.width": width * 3,
-      "viewport.height": height * 3,
+      embed: 'screenshot.url',
+      colorScheme: 'dark',
+      'viewport.isMobile': true,
+      'viewport.deviceScaleFactor': 1,
+      'viewport.width': width * 3,
+      'viewport.height': height * 3,
     });
     src = `https://api.microlink.io/?${params}`;
   } else {
@@ -78,12 +78,7 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <div className="hidden">
-          <img
-            src={src}
-            width={width}
-            height={height}
-            alt="hidden image"
-          />
+          <img src={src} width={width} height={height} alt="hidden image" />
         </div>
       ) : null}
 
@@ -96,7 +91,7 @@ export const LinkPreview = ({
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
-          className={cn("text-black dark:text-white", className)}
+          className={cn('text-black dark:text-white', className)}
           href={url}
         >
           {children}
@@ -117,7 +112,7 @@ export const LinkPreview = ({
                   y: 0,
                   scale: 1,
                   transition: {
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 260,
                     damping: 20,
                   },
