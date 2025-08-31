@@ -40,10 +40,10 @@ Currently, I&apos;m focused on learning more about authentication patterns (OAut
 </p> */}
 
       <p>
-        Currently, I&apos;m exploring authentication patterns (OAuth, JWT), automated
-        testing with Playwright, and performance optimization. Outside of tech,
-        I love discovering new music, exploring creative ideas, and finding
-        inspiration in the little things.
+        Currently, I&apos;m exploring authentication patterns (OAuth, JWT),
+        automated testing with Playwright, and performance optimization. Outside
+        of tech, I love discovering new music, exploring creative ideas, and
+        finding inspiration in the little things.
       </p>
       {/* <p>
 My journey into development began with frontend experiments, but I quickly found myself enjoying backend logic just as much. Over time, this evolved into full-stack development — working on real-world tools like ResumAI, an AI-powered resume and interview prep platform, and HerGuardian, a safety app that uses real-time location tracking.

@@ -7,7 +7,9 @@ const Switch = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <Button variant="outline" size="sm"
+    <Button
+      variant="outline"
+      size="sm"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded-lg bg-white dark:bg-black dark:hover:bg-white transition text-black dark:text-white"
     >

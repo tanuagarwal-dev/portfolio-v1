@@ -1,4 +1,4 @@
-'use client';;
+'use client';
 import {
   Card,
   CardContent,
@@ -6,7 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card.jsx';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/components/ui/tabs.jsx';
 import Image from 'next/image';
 import { Github, Link as Link1 } from 'lucide-react';
 import Link from 'next/link';
@@ -32,7 +37,11 @@ export default function Projects() {
       >
         <div>
           {projects.map((project) => (
-            <TabsContent key={project.name} value={project.name} className="w-full">
+            <TabsContent
+              key={project.name}
+              value={project.name}
+              className="w-full"
+            >
               <Card className="w-full bg-white shadow-md rounded-none rounded-t-lg border p-6 min-h-100">
                 <CardContent className="flex justify-center items-center">
                   <Image

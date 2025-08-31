@@ -69,7 +69,11 @@ export const MenuBar = () => {
               </ul>
             </div>
             <DrawerClose asChild>
-              <Button size="sm" variant="outline" className="text-red-600  font-bold m-4">
+              <Button
+                size="sm"
+                variant="outline"
+                className="text-red-600  font-bold m-4"
+              >
                 Cancel
               </Button>
             </DrawerClose>
