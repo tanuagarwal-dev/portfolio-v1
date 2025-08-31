@@ -143,7 +143,6 @@ export const noteworthyProjects = [
       'ShadCN',
       'motion',
       'Nodemailer',
-      'Vercel',
     ],
   },
 ];

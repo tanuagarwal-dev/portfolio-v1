@@ -1,5 +1,4 @@
 'use client';
-import { Theme } from '@tsparticles/engine';
 import {
   ThemeProvider as NextThemesProvider,
   ThemeProviderProps,
