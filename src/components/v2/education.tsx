@@ -1,5 +1,5 @@
 import { GraduationCap, School } from 'lucide-react';
-import { Timeline } from '../ui/timeline';
+import { Timeline } from '../ui/timeline.jsx';
 
 export default function Education() {
   const data = [

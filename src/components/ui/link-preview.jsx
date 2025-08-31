@@ -1,31 +1,16 @@
 'use client';
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
-
 import { encode } from 'qss';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AnimatePresence,
   motion,
   useMotionValue,
   useSpring,
 } from 'motion/react';
-
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
-
-type LinkPreviewProps = {
-  children: React.ReactNode;
-  url: string;
-  className?: string;
-  width?: number;
-  height?: number;
-  quality?: number;
-  layout?: string;
-} & (
-  | { isStatic: true; imageSrc: string }
-  | { isStatic?: false; imageSrc?: never }
-);
 
 export const LinkPreview = ({
   children,
@@ -35,7 +20,7 @@ export const LinkPreview = ({
   height = 125,
   isStatic = false,
   imageSrc = '',
-}: LinkPreviewProps) => {
+}) => {
   let src;
   if (!isStatic) {
     const params = encode({
@@ -54,20 +39,18 @@ export const LinkPreview = ({
     src = imageSrc;
   }
 
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  const [isMounted, setIsMounted] = React.useState(false);
-
-  React.useEffect(() => {
+  useEffect(() => {
     setIsMounted(true);
   }, []);
 
   const springConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);
-
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (event) => {
     const targetRect = event.currentTarget.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2;
@@ -76,18 +59,16 @@ export const LinkPreview = ({
 
   return (
     <>
-      {isMounted ? (
+      {isMounted && (
         <div className="hidden">
           <Image src={src} width={width} height={height} alt="hidden image" />
         </div>
-      ) : null}
+      )}
 
       <HoverCardPrimitive.Root
         openDelay={50}
         closeDelay={100}
-        onOpenChange={(open) => {
-          setOpen(open);
-        }}
+        onOpenChange={(open) => setOpen(open)}
       >
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
@@ -111,17 +92,11 @@ export const LinkPreview = ({
                   opacity: 1,
                   y: 0,
                   scale: 1,
-                  transition: {
-                    type: 'spring',
-                    stiffness: 260,
-                    damping: 20,
-                  },
+                  transition: { type: 'spring', stiffness: 260, damping: 20 },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
                 className="shadow-xl rounded-xl"
-                style={{
-                  x: translateX,
-                }}
+                style={{ x: translateX }}
               >
                 <Link
                   href={url}

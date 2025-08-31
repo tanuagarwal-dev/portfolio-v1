@@ -1,11 +1,19 @@
 import { ArrowDownRight } from 'lucide-react';
-import { BackgroundLines } from '../ui/background-lines';
-import { HoverBorderGradient } from '../ui/hover-border-gradient';
+import { BackgroundLines } from '../ui/background-lines.jsx';
+import { HoverBorderGradient } from '../ui/hover-border-gradient.jsx';
 import Link from 'next/link';
 
 export default function Landing() {
   return (
-    <BackgroundLines className="w-full relative dark:bg-black text-black text-center dark:text-white flex min-h-screen mb-12 overflow-x-hidden">
+    <BackgroundLines
+      svgOptions={{
+        width: 500,
+        height: 200,
+        stroke: '#fff',
+        strokeWidth: 1,
+      }}
+      className="w-full relative dark:bg-black text-black text-center dark:text-white flex min-h-screen mb-12 overflow-x-hidden"
+    >
       <div
         className="absolute top-[-80px] right-[-60px] w-2/3 h-2/3 
   bg-radial from-green-300 via-green-500 to-green-800 rounded-full blur-3xl 

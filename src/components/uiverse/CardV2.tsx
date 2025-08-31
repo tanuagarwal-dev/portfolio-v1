@@ -1,7 +1,8 @@
 'use client';
 import styled from 'styled-components';
-import { Button } from '../ui/moving-border';
+import { Button } from '../ui/moving-border.jsx';
 import { useState } from 'react';
+
 
 interface CardProps {
   title: string;
@@ -46,11 +47,14 @@ const Card = ({ data }: { data: CardProps }) => {
           </div>
           <div className="front rounded-2 w-full h-full absolute dark:bg-[#151515] bg-emerald-900 p-4 flex gap-4 flex-wrap items-center justify-center front-content">
             {data.techStack.map((item, index) => (
-              <Button
+              <Button variant="outline" size="sm"
                 borderRadius="1.75rem"
                 containerClassName="w-fit"
                 className=""
                 key={index}
+                duration={3000}
+                borderClassName=""
+                as="button"
               >
                 {item}
               </Button>

@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
-export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
+export const BoxesCore = ({ className, ...rest }) => {
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
   const colors = [
@@ -34,7 +34,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
     >
       {rows.map((_, i) => (
         <motion.div
-          key={`row` + i}
+          key={`row${i}`}
           className="relative h-8 w-16 border-l border-slate-700"
         >
           {cols.map((_, j) => (
@@ -46,7 +46,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
               animate={{
                 transition: { duration: 2 },
               }}
-              key={`col` + j}
+              key={`col${j}`}
               className="relative h-8 w-16 border-t border-r border-slate-700"
             >
               {j % 2 === 0 && i % 2 === 0 ? (

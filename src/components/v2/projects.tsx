@@ -5,12 +5,12 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+} from '@/components/ui/card.jsx';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs.jsx';
 import Image from 'next/image';
 import { Github, Link as Link1 } from 'lucide-react';
 import Link from 'next/link';
-import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
+import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card.jsx';
 import { projects, noteworthyProjects } from '@/lib/data';
 
 export default function Projects() {
@@ -32,7 +32,7 @@ export default function Projects() {
       >
         <div>
           {projects.map((project) => (
-            <TabsContent key={project.name} value={project.name}>
+            <TabsContent key={project.name} value={project.name} className="w-full">
               <Card className="w-full bg-white shadow-md rounded-none rounded-t-lg border p-6 min-h-100">
                 <CardContent className="flex justify-center items-center">
                   <Image
@@ -72,7 +72,7 @@ export default function Projects() {
     border border-gray-300 dark:border-gray-700 
     rounded-b-lg"
             >
-              <CardHeader>
+              <CardHeader className="">
                 <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                   {project.name}
                   <Link href={project.link}>
@@ -105,6 +105,7 @@ export default function Projects() {
       <div className="flex flex-wrap gap-8 mt-18 w-full justify-center">
         {noteworthyProjects.map((project) => (
           <CardContainer
+            containerClassName=""
             key={project.name}
             className="inter-var relative group max-w-md-mx-auto lg:w-full md:w-full w-70"
           >

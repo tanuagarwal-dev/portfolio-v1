@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button.jsx';
 import {
   Drawer,
   DrawerClose,
@@ -9,7 +9,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@/components/ui/drawer';
+} from '@/components/ui/drawer.jsx';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 export const MenuBar = () => {
@@ -19,16 +19,17 @@ export const MenuBar = () => {
         <DrawerTrigger asChild>
           <Button
             variant="outline"
+            size="sm"
             className="bg-transparent border-0 font-bold"
           >
             <Menu />
           </Button>
         </DrawerTrigger>
-        <DrawerContent>
+        <DrawerContent className="">
           <div className="mx-auto w-full max-w-sm h-screen flex flex-col justify-start gap-4">
-            <DrawerHeader>
-              <DrawerTitle>Tanu Agarwal</DrawerTitle>
-              <DrawerDescription>Web Dev</DrawerDescription>
+            <DrawerHeader className="">
+              <DrawerTitle className="">Tanu Agarwal</DrawerTitle>
+              <DrawerDescription className="">Web Dev</DrawerDescription>
             </DrawerHeader>
 
             <div className="border p-4 capitalize m-2">
@@ -68,7 +69,7 @@ export const MenuBar = () => {
               </ul>
             </div>
             <DrawerClose asChild>
-              <Button variant="outline" className="text-red-600  font-bold m-4">
+              <Button size="sm" variant="outline" className="text-red-600  font-bold m-4">
                 Cancel
               </Button>
             </DrawerClose>

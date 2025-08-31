@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   motion,
   useAnimationFrame,
@@ -7,20 +7,9 @@ import {
   useMotionValue,
   useTransform,
 } from 'motion/react';
-import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 
-type ButtonProps<T extends React.ElementType> = {
-  borderRadius?: string;
-  children: React.ReactNode;
-  as?: T;
-  containerClassName?: string;
-  borderClassName?: string;
-  duration?: number;
-  className?: string;
-} & React.ComponentPropsWithoutRef<T>;
-
-export function Button<T extends React.ElementType = 'button'>({
+export function Button({
   borderRadius = '1.75rem',
   children,
   as,
@@ -29,7 +18,7 @@ export function Button<T extends React.ElementType = 'button'>({
   duration,
   className,
   ...otherProps
-}: ButtonProps<T>) {
+}) {
   const Component = as || 'button';
 
   return (
@@ -60,9 +49,7 @@ export function Button<T extends React.ElementType = 'button'>({
           'relative flex h-full w-full items-center justify-center border dark:border-emerald-800 border-slate-200 dark:bg-emerald-900/[0.8] bg-emerald-700 text-sm text-white antialiased backdrop-blur-xl p-4',
           className
         )}
-        style={{
-          borderRadius: `calc(${borderRadius} * 0.96)`,
-        }}
+        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
         {children}
       </div>
@@ -70,19 +57,9 @@ export function Button<T extends React.ElementType = 'button'>({
   );
 }
 
-
-export const MovingBorder = ({
-  children,
-  duration = 3000,
-  ...otherProps
-}: {
-  children: React.ReactNode;
-  duration?: number;
-  rx?: string;
-  ry?: string;
-} & React.SVGProps<SVGSVGElement>) => {
-  const pathRef = useRef<SVGPathElement | null>(null);
-  const progress = useMotionValue<number>(0);
+export function MovingBorder({ children, duration = 3000, ...otherProps }) {
+  const pathRef = useRef(null);
+  const progress = useMotionValue(0);
 
   useAnimationFrame((time) => {
     const length = pathRef.current?.getTotalLength();
@@ -113,7 +90,7 @@ export const MovingBorder = ({
       >
         <path
           fill="none"
-          d={`M0,0 H100 V100 H0 Z`} // rectangle path
+          d="M0,0 H100 V100 H0 Z" // rectangle path
           ref={pathRef}
         />
       </svg>
@@ -130,5 +107,4 @@ export const MovingBorder = ({
       </motion.div>
     </>
   );
-};
-
+}
