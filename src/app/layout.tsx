@@ -66,7 +66,7 @@ export default function RootLayout({
         {/* {children}
           </ThemesProvider> */}
 
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
       </body>
