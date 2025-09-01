@@ -29,7 +29,7 @@ export default function Landing() {
         </div>
         <div className="lg:w-1/2 text-lg font-semibold p-4 text-black/80 dark:text-gray-300">
           <p>
-            Passionate about front-end development, I create modern web
+            Passionate about fullstack development, I create modern web
             solutions that blend design and performances. Explore my world and
             discover my projects!
           </p>

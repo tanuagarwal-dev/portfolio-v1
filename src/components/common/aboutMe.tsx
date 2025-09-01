@@ -48,6 +48,13 @@ Currently, I&apos;m focused on learning more about authentication patterns (OAut
       {/* <p>
 My journey into development began with frontend experiments, but I quickly found myself enjoying backend logic just as much. Over time, this evolved into full-stack development — working on real-world tools like ResumAI, an AI-powered resume and interview prep platform, and HerGuardian, a safety app that uses real-time location tracking.
 </p> */}
+      <div className='grid gap-2'>
+        <p className="text-sm text-emerald-400 underline">
+          TLDR: Frontend finesse. Backend power. End-end-end solutions. I make
+          it work.
+        </p>
+        <p className="text-sm text-emerald-600 font-bold underline">Open To work</p> 
+      </div>
     </Card>
   );
 }
