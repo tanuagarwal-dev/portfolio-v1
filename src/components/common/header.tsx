@@ -35,6 +35,14 @@ export default function Header() {
           >
             Contact
           </Link>
+          <Link
+            href="https://drive.google.com/file/d/16BOnZXTWEGXh8z_HYiqctJ6_9jfopVFZ/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-600 dark:hover:text-green-400 transition"
+          >
+            Resume
+          </Link>
         </span>
 
         {/* Mobile Menu */}
