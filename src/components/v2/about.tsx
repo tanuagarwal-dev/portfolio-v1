@@ -6,7 +6,7 @@ import avatar from '../../../public/me1.jpg';
 export default function Details() {
   return (
     <section
-      className="relative min-h-screen px-8 w-full text-justify py-12 flex flex-col lg:flex-row items-center justify-center gap-4 mb-10 overflow-hidden"
+      className="relative min-h-screen px-8 w-full lg:text-justify text-left py-12 flex flex-col lg:flex-row items-center justify-center gap-4 mb-10 overflow-hidden"
       id="about"
     >
       {/* Grid Shape */}
