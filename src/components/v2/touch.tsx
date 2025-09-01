@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import { Github, Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -92,7 +93,7 @@ export default function Touch() {
             </form>
           </div>
 
-          <div className="mt-8 space-y-4 text-xl font-medium lg:w-1/3 mb-8 text-justify text-green-700 dark:text-white">
+          <div className="mt-8 space-y-4 text-lg font-bold lg:w-1/3 mb-8 text-left text-green-700 dark:text-white tracking-tight">
             <p>
               I am always on the look out for opportunities that enable me to
               grow personally and professionally, as well as to connect with
@@ -102,28 +103,43 @@ export default function Touch() {
               Whether you have an opportunity, piece of advice, question, or
               simply want to say hi, my inbox is always open!
             </p>
-            <div className="flex gap-6 mt-6 text-slate-800 dark:text-white">
-              <Link
-                href="https://instagram.com/tanu._.agarwal0101"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="flex gap-6 mt-6 text-slate-800 dark:text-white bg-slate-100 w-fit p-4 dark:bg-neutral-900 ">
+              <motion.div
+                whileHover={{ scale: 1.5 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Instagram className="w-6 h-6 hover:text-green-700 transition" />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/tanu-agarwal0101"
-                target="_blank"
-                rel="noopener noreferrer"
+                <Link
+                  href="https://instagram.com/tanu._.agarwal0101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram className="w-6 h-6 hover:text-emerald-600 transition" />
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.5 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Linkedin className="w-6 h-6 hover:text-green-700 transition" />
-              </Link>
-              <Link
-                href="https://github.com/tanuagarwal-dev"
-                target="_blank"
-                rel="noopener noreferrer"
+                <Link
+                  href="https://linkedin.com/in/tanu-agarwal0101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="w-6 h-6 hover:text-emerald-600 transition" />
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.5 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Github className="w-6 h-6 hover:text-green-700 transition" />
-              </Link>
+                <Link
+                  href="https://github.com/tanuagarwal-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="w-6 h-6 hover:text-emerald-600 transition" />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>

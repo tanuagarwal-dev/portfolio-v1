@@ -6,7 +6,7 @@ export default function AboutMe() {
       className="relative w-full lg:w-1/2 bg-white/70 dark:bg-gray-900/70 
                        backdrop-blur-xl border border-white/10 
                        shadow-xl rounded-2xl p-8 text-gray-700 dark:text-gray-200 
-                       leading-relaxed tracking-wide space-y-4"
+                       leading-relaxed tracking-tight space-y-4"
     >
       <div
         className="absolute inset-0 -z-10 rounded-2xl 
@@ -48,12 +48,12 @@ Currently, I&apos;m focused on learning more about authentication patterns (OAut
       {/* <p>
 My journey into development began with frontend experiments, but I quickly found myself enjoying backend logic just as much. Over time, this evolved into full-stack development — working on real-world tools like ResumAI, an AI-powered resume and interview prep platform, and HerGuardian, a safety app that uses real-time location tracking.
 </p> */}
-      <div className='grid gap-2'>
-        <p className="text-sm text-emerald-400 underline">
+      <div className="grid gap-2 tracking-wide">
+        <p className="text-md text-emerald-400 ">
           TLDR: Frontend finesse. Backend power. End-end-end solutions. I make
           it work.
         </p>
-        <p className="text-sm text-emerald-600 font-bold underline">Open To work</p> 
+        <p className="text-md  text-emerald-600 font-bold underline">Open To work</p>
       </div>
     </Card>
   );

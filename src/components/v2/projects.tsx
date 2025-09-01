@@ -17,6 +17,7 @@ import { Github, Link as Link1 } from 'lucide-react';
 import Link from 'next/link';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card.jsx';
 import { projects, noteworthyProjects } from '@/lib/data';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
   return (
@@ -119,7 +120,20 @@ export default function Projects() {
             className="inter-var relative group max-w-md-mx-auto lg:w-full md:w-full w-70"
           >
             {/* trapezium */}
-            <div className="absolute -top-3 left-4 projects-clip w-24 h-6 dark:bg-zinc-700 bg-emerald-500 z-0"></div>
+            <motion.div
+              initial={{ y: 0, opacity: 0 }}
+              whileInView={{
+                y: [0, -6, 0], // goes up then back down
+                opacity: 1,
+              }}
+              transition={{
+                duration: 4, // time for one full cycle
+                repeat: Infinity, // keep looping
+                ease: 'easeInOut',
+              }}
+              viewport={{ once: false, amount: 0.3 }} // stays active while in view
+              className="absolute -top-3 left-4 projects-clip w-24 h-6 dark:bg-zinc-700 bg-emerald-500 z-0"
+            />
             <CardBody className="dark:bg-zinc-900 bg-emerald-700 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] rounded-xl p-6 border z-10 lg:h-88 md:h-100 h-120 flex flex-col gap-2">
               <CardItem
                 translateZ={50}

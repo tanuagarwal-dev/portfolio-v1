@@ -16,7 +16,7 @@ export default function Education() {
           <h2 className="text-lg text-gray-400">
             JSS ACADEMY OF TECHNICAL EDUCATION
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-md text-gray-600">
             Third-year CS student with a CGPA of 8.9. Actively building web
             projects, participating in hackathons, and contributing to GDG
             onCampus JSS.
@@ -37,7 +37,7 @@ export default function Education() {
           <h2 className="text-lg text-gray-400">
             CATHEDRAL SENIOR SECONDARY SCHOOL
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-md text-gray-600">
             Completed senior secondary education with a strong foundation in
             science and mathematics.
           </p>

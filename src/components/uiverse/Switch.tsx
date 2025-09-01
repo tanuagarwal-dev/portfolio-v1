@@ -11,7 +11,7 @@ const Switch = () => {
       variant="outline"
       size="sm"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-lg bg-white dark:bg-black dark:hover:bg-white transition text-black dark:text-white"
+      className="p-2 rounded-lg bg-transparent  dark:hover:bg-white transition text-black dark:text-white"
     >
       {theme === 'dark' ? '☀️' : '🌙'}
     </Button>
