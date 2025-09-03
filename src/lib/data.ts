@@ -45,8 +45,8 @@ export const projects = [
     name: 'Recruitment Platform',
     description:
       'A website for GDG onCampus to recruit students as members annually.',
-    github: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2',
-    link: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2Frontend',
+    github: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2Frontend',
+    link: 'https://recruitments.gdscjss.in/',
     video: '/video/recplat_video.mp4',
     thumbnail: '/images/recplat.png',
     brief: 'team',
@@ -131,7 +131,7 @@ export const noteworthyProjects = [
     github: 'https://github.com/krshishir1/meeting-minutes',
     image: '/images/briefly.png',
     brief: 'team: HackVSIT 6.0',
-    workedOn: 'Frontend',
+    workedOn: 'Frontend Development',
     techStack: [
       'Next.js',
       'Tailwind CSS',
