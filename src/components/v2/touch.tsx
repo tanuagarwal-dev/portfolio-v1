@@ -109,7 +109,7 @@ export default function Touch() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="https://instagram.com/tanu._.agarwal0101"
+                  href="https://instagram.com/tanu._.agarwal01"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

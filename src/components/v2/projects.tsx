@@ -18,8 +18,10 @@ import Link from 'next/link';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card.jsx';
 import { projects, noteworthyProjects } from '@/lib/data';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function Projects() {
+  const [playingProject, setPlayingProject] = useState<string | null>(null);(false);
   return (
     <div
       className="relative min-h-screen lg:px-8 px-4 w-full py-12 flex flex-col items-center justify-center gap-4 my-2"
@@ -43,15 +45,50 @@ export default function Projects() {
               value={project.name}
               className="w-full"
             >
-              <Card className="w-full bg-white shadow-md rounded-none rounded-t-lg border p-6 min-h-100">
-                <CardContent className="flex justify-center items-center">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={500}
-                    height={300}
-                    className="rounded-lg mb-4"
-                  />
+              <Card className="w-full shadow-md rounded-none rounded-t-lg border p-0">
+                <CardContent className="relative flex justify-center items-center p-0">
+                  <div className="w-full aspect-[16/9]">
+                    {' '}
+                    {/* Fixed 16:9 container */}
+                    {/* Thumbnail only for small screens */}
+                    <div className="block lg:hidden w-full h-full">
+                      <Image
+                        src={project.thumbnail}
+                        alt={`${project.name} thumbnail`}
+                        fill
+                        className="object-cover rounded-md"
+                      />
+                    </div>
+                    {/* Video player for medium+ screens */}
+                    <div className="hidden lg:block w-full h-full">
+                      {playingProject === project.name ? (
+                        <video
+                          className="w-full h-full object-cover rounded-md"
+                          controls
+                          autoPlay
+                        >
+                          <source src={project.video} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <div
+                          className="relative cursor-pointer w-full h-full"
+                          onClick={() => setPlayingProject(project.name)}
+                        >
+                          <Image
+                            src={project.thumbnail}
+                            alt={`${project.name} thumbnail`}
+                            fill
+                            className="object-cover rounded-md"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="bg-black bg-opacity-60 p-4 rounded-full text-white text-3xl">
+                              ▶
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -63,7 +100,7 @@ export default function Projects() {
             <TabsTrigger
               key={project.name}
               value={project.name}
-              className=" w-fit dark:text-gray-300 dark:hover:text-gray-600 hover:text-gray-400 rounded-none font-semibold text-[18px] h-fit p-2 shadow-md transition duration-200 ease-in-out dark:data-[state=active]:bg-green-700 data-[state=active]:bg-emerald-700/90 data-[state=active]:text-white "
+              className=" w-fit dark:text-gray-300 dark:hover:text-gray-600 hover:text-gray-400 rounded-none font-semibold text-[18px] h-fit p-2 shadow-md transition duration-200 ease-in-out dark:data-[state=active]:bg-green-700 data-[state=active]:bg-emerald-700/90 data-[state=active]:text-white"
             >
               {project.name}
             </TabsTrigger>

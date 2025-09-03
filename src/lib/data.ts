@@ -45,9 +45,10 @@ export const projects = [
     name: 'Recruitment Platform',
     description:
       'A website for GDG onCampus to recruit students as members annually.',
-    link: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2',
-    github: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2Frontend',
-    image: '/',
+    github: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2',
+    link: 'https://github.com/RamitVishwakarma/RecruitmentPlatformV2Frontend',
+    video: '/video/recplat_video.mp4',
+    thumbnail: '/images/recplat.png',
     brief: 'team',
     workedOn: 'FullStack',
     techStack: [
@@ -74,13 +75,13 @@ export const projects = [
       'swagger UI',
     ],
   },
-
   {
     name: 'LOLly',
     description:
       "A fun project to search and take AI's help to create fun memes with just a prompt.",
     link: 'https://meme-ify.vercel.app/',
-    image: '/lolly.jpg',
+    video: '/video/lolly_video.mp4',
+    thumbnail: '/images/lolly.png',
     brief: 'solo',
     github: 'https://github.com/tanuagarwal-dev/meme-ify',
     workedOn: 'FullStack',
@@ -96,6 +97,27 @@ export const projects = [
       'motion',
       'html2canvas',
       'Vercel',
+    ],
+  },
+  {
+    name: 'Compliment Extension',
+    description:
+      'A delightful AI-powered Chrome extension that gives users daily boosts of joy, confidence, or sass with customizable vibes and streak tracking.',
+    link: 'https://github.com/tanuagarwal-dev/compliment-extension',
+    github: 'https://github.com/tanuagarwal-dev/compliment-extension',
+    video: '/video/complements_video.mp4',
+    thumbnail: '/images/complement.png',
+    brief: 'solo',
+    workedOn: 'Frontend + Extension + Backend',
+    techStack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Chrome Extensions API',
+      'chrome.storage.local',
+      'Node.js',
+      'Express.js',
+      'Cohere API',
     ],
   },
 ];
@@ -125,24 +147,28 @@ export const noteworthyProjects = [
   },
   {
     name: 'HerGuardian',
-    description: 'A pwa for women safety.',
+    description:
+      'A safety-focused web application built with security and reliability at its core.',
     link: 'https://github.com/tanuagarwal-dev/her-guardian-backend-v1',
     github: 'https://github.com/tanuagarwal-dev/her-guardian-frontend-v1',
-    image: '/images/lolly.png',
+    image: '/images/herguardian.png',
     brief: 'solo- ongoing',
-    workedOn: 'FullStack',
+    workedOn: 'Fullstack Development',
     techStack: [
       'Next.js',
-      'Cohere API',
-      'Node.js',
+      'Tailwind CSS',
       'Express.js',
+      'Node.js',
+      'ShadCN',
+      'Socket.io',
+      'axios',
+      'Cohere API',
       'typescript',
       'Prisma ORM',
       'MongoDB',
-      'Tailwind CSS',
-      'ShadCN',
       'motion',
       'Nodemailer',
     ],
   },
+  
 ];
