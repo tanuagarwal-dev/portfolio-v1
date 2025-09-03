@@ -170,5 +170,4 @@ export const noteworthyProjects = [
       'Nodemailer',
     ],
   },
-  
 ];

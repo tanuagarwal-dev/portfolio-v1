@@ -53,7 +53,9 @@ My journey into development began with frontend experiments, but I quickly found
           TLDR: Frontend finesse. Backend power. End-end-end solutions. I make
           it work.
         </p>
-        <p className="text-md  text-emerald-600 font-bold underline">Open To work</p>
+        <p className="text-md  text-emerald-600 font-bold underline">
+          Open To work
+        </p>
       </div>
     </Card>
   );

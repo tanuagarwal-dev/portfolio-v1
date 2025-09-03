@@ -21,7 +21,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function Projects() {
-  const [playingProject, setPlayingProject] = useState<string | null>(null);(false);
+  const [playingProject, setPlayingProject] = useState<string | null>(null);
   return (
     <div
       className="relative min-h-screen lg:px-8 px-4 w-full py-12 flex flex-col items-center justify-center gap-4 my-2"
