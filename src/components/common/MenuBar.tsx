@@ -20,6 +20,7 @@ export const MenuBar = () => {
           <Button
             variant="outline"
             size="sm"
+            aria-label="Open navigation menu"
             className="bg-transparent border-0 font-bold"
           >
             <Menu />

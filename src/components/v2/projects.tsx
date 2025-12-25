@@ -56,6 +56,7 @@ export default function Projects() {
                         src={project.thumbnail}
                         alt={`${project.name} thumbnail`}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 768px"
                         className="object-cover rounded-md"
                       />
                     </div>
@@ -66,18 +67,23 @@ export default function Projects() {
                           className="w-full h-full object-cover rounded-md"
                           controls
                           autoPlay
+                          preload="none"
+                          poster={project.thumbnail}
                         >
                           <source src={project.video} type="video/mp4" />
                         </video>
                       ) : (
-                        <div
-                          className="relative cursor-pointer w-full h-full"
+                        <button
+                          type="button"
+                          className="relative cursor-pointer w-full h-full text-left"
                           onClick={() => setPlayingProject(project.name)}
+                          aria-label={`Play ${project.name} demo video`}
                         >
                           <Image
                             src={project.thumbnail}
                             alt={`${project.name} thumbnail`}
                             fill
+                            sizes="(max-width: 1024px) 100vw, 800px"
                             className="object-cover rounded-md"
                           />
                           <div className="absolute inset-0 flex items-center justify-center">
@@ -85,7 +91,7 @@ export default function Projects() {
                               ▶
                             </div>
                           </div>
-                        </div>
+                        </button>
                       )}
                     </div>
                   </div>
@@ -122,10 +128,16 @@ export default function Projects() {
               <CardHeader className="">
                 <CardTitle className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                   {project.name}
-                  <Link href={project.link}>
+                  <Link
+                    href={project.link}
+                    aria-label={`${project.name} live link`}
+                  >
                     <Link1 className="w-5 h-5 text-green-600 dark:text-green-400" />
                   </Link>
-                  <Link href={project.link}>
+                  <Link
+                    href={project.github}
+                    aria-label={`${project.name} GitHub repository`}
+                  >
                     <Github className="w-5 h-5 text-green-600 dark:text-green-400" />
                   </Link>
                 </CardTitle>
@@ -154,7 +166,7 @@ export default function Projects() {
           <CardContainer
             containerClassName=""
             key={project.name}
-            className="inter-var relative group max-w-md-mx-auto lg:w-full md:w-full w-70"
+            className="inter-var relative group max-w-md mx-auto lg:w-full md:w-full w-70"
           >
             {/* trapezium */}
             <motion.div
@@ -183,11 +195,17 @@ export default function Projects() {
                 className="text-white mt-2 text-2xl font-semibold flex gap-2 items-center"
               >
                 {project.name}
-                <Link href={project.link}>
+                <Link
+                  href={project.link}
+                  aria-label={`${project.name} live link`}
+                >
                   <Link1 className="w-5 h-5 dark:text-green-700 text-gray-400 hover:text-gray-300 dark:hover:text-green-400" />
                 </Link>
-                <Link href={project.github}>
-                  <Github className="w-5 h-5 text-gray-400 dark:text-green-700 hover:text-gray-300 dark:hover:text-green-400" />
+                <Link
+                  href={project.github}
+                  aria-label={`${project.name} GitHub repository`}
+                >
+                  <Github className="w-5 h-5 dark:text-green-700 text-gray-400 hover:text-gray-300 dark:hover:text-green-400" />
                 </Link>
               </CardItem>
 
@@ -201,8 +219,8 @@ export default function Projects() {
                 {project.techStack.map((tech, index) => (
                   <CardItem
                     key={index}
-                    translateZ={50}
                     className="dark:hover:text-green-900"
+                    translateZ={50}
                   >
                     #{tech}
                   </CardItem>

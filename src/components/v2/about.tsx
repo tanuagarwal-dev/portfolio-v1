@@ -19,6 +19,7 @@ export default function Details() {
         <Image
           src={avatar}
           alt="Avatar"
+          sizes="(max-width: 1024px) 60vw, 240px"
           className="w-60 h-60 rounded-full mb-4 p-1 bg-amber-200/70"
         />
         <h1 className="text-4xl lg:text-5xl font-bold text-gray-700 dark:text-gray-300 mb-4">

@@ -1,12 +1,23 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Header from '@/components/common/header';
 import Landing from '@/components/v2/landing';
 import About from '@/components/v2/about';
-import Projects from '@/components/v2/projects';
-import Touch from '@/components/v2/touch';
 import Education from '@/components/v2/education';
 import Skills from '@/components/v2/skills';
+
+const Projects = dynamic(() => import('@/components/v2/projects'), {
+  loading: () => (
+    <div className="min-h-[320px] w-full" aria-label="Loading projects" />
+  ),
+});
+
+const Touch = dynamic(() => import('@/components/v2/touch'), {
+  loading: () => (
+    <div className="min-h-[320px] w-full" aria-label="Loading contact form" />
+  ),
+});
 
 export default function Home() {
   return (
