@@ -165,8 +165,8 @@ export const projects = [
     name: 'Compliment Extension',
     description:
       'A delightful AI-powered Chrome extension that gives users daily boosts of joy, confidence, or sass with customizable vibes and streak tracking.',
-    link: 'https://github.com/tanuagarwal-dev/compliment-extension',
-    github: 'https://github.com/tanuagarwal-dev/compliment-extension',
+    link: 'https://github.com/tanuagarwal-dev/compliments-extension',
+    github: 'https://github.com/tanuagarwal-dev/compliments-extension',
     video: '/video/complements_video.mp4',
     thumbnail: '/images/complement.png',
     brief: 'solo',
