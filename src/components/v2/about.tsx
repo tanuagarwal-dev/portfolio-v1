@@ -1,9 +1,14 @@
 'use client';
 import Typewriter from 'typewriter-effect';
+import React from 'react';
 import AboutMe from '../common/aboutMe';
 import Image from 'next/image';
 import avatar from '../../../public/images/me1.jpg';
 export default function Details() {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <section
       className="relative min-h-screen px-8 w-full lg:text-justify text-left py-12 flex flex-col lg:flex-row items-center justify-center gap-4 mb-10 overflow-hidden"
@@ -27,27 +32,31 @@ export default function Details() {
         </h1>
         <h2 className="flex flex-wrap font-bold text-gray-700 dark:text-gray-300 mb-4 text-3xl lg:text-4xl">
           I am a&nbsp;
-          <span className="text-emerald-600">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString('Full Stack Developer.')
-                  .pauseFor(150)
-                  .deleteAll()
-                  .typeString('Software Engineer.')
-                  .pauseFor(150)
-                  .deleteAll()
-                  .typeString('CSE Student.')
-                  .pauseFor(150)
-                  .deleteAll()
-                  .start();
-              }}
-              options={{
-                loop: true,
-                delay: 40,
-                deleteSpeed: 30,
-              }}
-            />
+          <span className="text-emerald-600" suppressHydrationWarning>
+            {mounted ? (
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString('Full Stack Developer.')
+                    .pauseFor(150)
+                    .deleteAll()
+                    .typeString('Software Engineer.')
+                    .pauseFor(150)
+                    .deleteAll()
+                    .typeString('CSE Student.')
+                    .pauseFor(150)
+                    .deleteAll()
+                    .start();
+                }}
+                options={{
+                  loop: true,
+                  delay: 40,
+                  deleteSpeed: 30,
+                }}
+              />
+            ) : (
+              'Full Stack Developer.'
+            )}
           </span>
         </h2>
       </div>

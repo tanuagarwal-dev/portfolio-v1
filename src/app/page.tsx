@@ -8,6 +8,7 @@ import Education from '@/components/v2/education';
 import Skills from '@/components/v2/skills';
 
 const Projects = dynamic(() => import('@/components/v2/projects'), {
+  ssr: false,
   loading: () => (
     <div className="min-h-[320px] w-full" aria-label="Loading projects" />
   ),

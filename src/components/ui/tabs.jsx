@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 export function Tabs({ className, ...props }) {
   return (
     <TabsPrimitive.Root
+      suppressHydrationWarning
       data-slot="tabs"
       className={cn('flex flex-col gap-2', className)}
       {...props}
@@ -43,6 +44,7 @@ export function TabsTrigger({ className, ...props }) {
 export function TabsContent({ className, ...props }) {
   return (
     <TabsPrimitive.Content
+      suppressHydrationWarning
       data-slot="tabs-content"
       className={cn('flex-1 outline-none', className)}
       {...props}

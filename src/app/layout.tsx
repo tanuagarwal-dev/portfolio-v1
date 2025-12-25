@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${grotesk.variable} ${montserrat.variable} ${jetbrains.variable} antialiased`}
       >
@@ -65,7 +65,13 @@ export default function RootLayout({
         {/* {children}
           </ThemesProvider> */}
 
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={true}
+          enableColorScheme={true}
+          disableTransitionOnChange={true}
+        >
           {children}
         </ThemeProvider>
       </body>

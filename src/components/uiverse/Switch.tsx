@@ -5,6 +5,10 @@ import { Button } from '../ui/button.jsx';
 
 const Switch = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Button
@@ -13,7 +17,7 @@ const Switch = () => {
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded-lg bg-transparent  dark:hover:bg-white transition text-black dark:text-white"
     >
-      {theme === 'dark' ? '☀️' : '🌙'}
+      {mounted ? (theme === 'dark' ? '☀️' : '🌙') : '☀️'}
     </Button>
   );
 };
