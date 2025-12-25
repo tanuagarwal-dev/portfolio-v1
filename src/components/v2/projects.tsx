@@ -22,6 +22,15 @@ import { useState } from 'react';
 
 export default function Projects() {
   const [playingProject, setPlayingProject] = useState<string | null>(null);
+  const getYouTubeEmbed = (url?: string) => {
+    if (!url) return null;
+    const short = url.match(/youtu\.be\/([\w-]+)/);
+    const long = url.match(/[?&]v=([\w-]+)/);
+    const id = short?.[1] || long?.[1];
+    return id
+      ? `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&rel=0`
+      : null;
+  };
   return (
     <div
       className="relative min-h-screen lg:px-8 px-4 w-full py-12 flex flex-col items-center justify-center gap-4 my-2"
@@ -50,28 +59,80 @@ export default function Projects() {
                   <div className="w-full aspect-[16/9]">
                     {' '}
                     {/* Fixed 16:9 container */}
-                    {/* Thumbnail only for small screens */}
+                    {/* Thumbnail + play for small screens */}
                     <div className="block lg:hidden w-full h-full">
-                      <Image
-                        src={project.thumbnail}
-                        alt={`${project.name} thumbnail`}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 768px"
-                        className="object-cover rounded-md"
-                      />
+                      {playingProject === project.name ? (
+                        (() => {
+                          const embed = getYouTubeEmbed(project.video);
+                          return embed ? (
+                            <iframe
+                              className="w-full h-full rounded-md"
+                              src={embed}
+                              title={`${project.name} demo video`}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          ) : (
+                            <video
+                              className="w-full h-full object-cover rounded-md"
+                              controls
+                              autoPlay
+                              preload="none"
+                              poster={project.thumbnail}
+                            >
+                              <source src={project.video} type="video/mp4" />
+                            </video>
+                          );
+                        })()
+                      ) : (
+                        <button
+                          type="button"
+                          className="relative cursor-pointer w-full h-full text-left"
+                          onClick={() => setPlayingProject(project.name)}
+                          aria-label={`Play ${project.name} demo video`}
+                        >
+                          <Image
+                            src={project.thumbnail}
+                            alt={`${project.name} thumbnail`}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 768px"
+                            className="object-cover rounded-md"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="bg-black bg-opacity-60 p-3 rounded-full text-white text-2xl">
+                              ▶
+                            </div>
+                          </div>
+                        </button>
+                      )}
                     </div>
                     {/* Video player for medium+ screens */}
                     <div className="hidden lg:block w-full h-full">
                       {playingProject === project.name ? (
-                        <video
-                          className="w-full h-full object-cover rounded-md"
-                          controls
-                          autoPlay
-                          preload="none"
-                          poster={project.thumbnail}
-                        >
-                          <source src={project.video} type="video/mp4" />
-                        </video>
+                        (() => {
+                          const embed = getYouTubeEmbed(project.video);
+                          return embed ? (
+                            <iframe
+                              className="w-full h-full rounded-md"
+                              src={embed}
+                              title={`${project.name} demo video`}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          ) : (
+                            <video
+                              className="w-full h-full object-cover rounded-md"
+                              controls
+                              autoPlay
+                              preload="none"
+                              poster={project.thumbnail}
+                            >
+                              <source src={project.video} type="video/mp4" />
+                            </video>
+                          );
+                        })()
                       ) : (
                         <button
                           type="button"
