@@ -69,7 +69,7 @@ export const MenuBar = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://drive.google.com/file/d/16BOnZXTWEGXh8z_HYiqctJ6_9jfopVFZ/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1B8z-7h9xLOAfF4T8ZsGcSWmBJwvCqyMb/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-green-600 dark:hover:text-green-400 transition"
