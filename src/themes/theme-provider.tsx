@@ -8,5 +8,14 @@ export default function ThemesProvider({
   children,
   ...props
 }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  return (
+    <NextThemesProvider
+      defaultTheme="dark"
+      enableSystem={false}
+      attribute="class"
+      {...props}
+    >
+      {children}
+    </NextThemesProvider>
+  );
 }

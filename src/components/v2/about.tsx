@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import React from 'react';
 import AboutMe from '../common/aboutMe';
 import Image from 'next/image';
-import avatar from '../../../public/images/me1.jpg';
+import avatar from '../../../public/images/me2.jpg';
 export default function Details() {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {

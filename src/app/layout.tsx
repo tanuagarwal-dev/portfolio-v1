@@ -68,8 +68,8 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={true}
-          enableColorScheme={true}
+          enableSystem={false}
+          enableColorScheme={false}
           disableTransitionOnChange={true}
         >
           {children}

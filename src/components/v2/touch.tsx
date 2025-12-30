@@ -104,18 +104,18 @@ export default function Touch() {
               simply want to say hi, my inbox is always open!
             </p>
             <div className="flex gap-6 mt-6 text-slate-800 dark:text-white bg-slate-100 w-fit p-4 dark:bg-neutral-900 ">
-              <motion.div
+              {/* <motion.div
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="https://instagram.com/tanu._.agarwal01"
+                  href="/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Instagram className="w-6 h-6 hover:text-emerald-600 transition" />
                 </Link>
-              </motion.div>
+              </motion.div> */}
               <motion.div
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 0.95 }}
